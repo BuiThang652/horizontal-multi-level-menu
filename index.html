@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu đa cấp</title>
+    <style>
+    /* css html để chỉnh font chữ và kiểu chữ in đậm */
+    html {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+
+    /* Đưa padding ul về 0px */
+    ul {
+        padding: 0;
+    }
+
+    /* Xóa dấm chấm */
+    li {
+        list-style-type: none;
+    }
+
+    /* Xóa gạch chân */
+    a {
+        text-decoration: none;
+    }
+
+    
+    .container{
+        max-width: 1024px;
+        height: 55px;
+        background: #736f6c;
+    }
+
+    .container__menu{
+
+    }
+
+    .container__menu > li {
+        /* 1 */
+        display: inline-block; 
+    }
+    
+    .container__menu li { 
+        /* 7. Thêm relative vào thẻ li */
+        position: relative;
+    }
+
+    .container__menu > li >  a {
+        /*  */
+        color: #ffffff;
+        text-transform: uppercase;
+        /* 3. Căn giữa chiều cao */
+        line-height: 55px;
+        /* 4. Chiều ngang  */
+        padding: 0 32px;
+        /* 6. Lấy full khoảng trống inline-block */
+        display: inline-block;
+
+    }
+
+    /* 5. Hover vào li tác dụng vào a*/
+    .sub__menu li:hover a,
+    .container__menu > li:hover > a {
+        background: #a5292d;
+    }
+
+    .container__menu .sub__menu{
+        /* 2. Ẩn menu con sub__menu */
+        display: none;
+
+        /* 8. thêm absolute vào thẻ ul menu con */
+        position: absolute;
+
+        /* 9.  background cho thẻ ul con*/
+        background: #a6a39e;
+
+        width: 141px;
+    }
+
+    .container__menu .sub__menu a {
+        color: #000000;
+        padding: 15px 32px;
+        display: block;
+
+    }
+
+    .container__menu li:hover .sub__menu {
+        display: block;
+    }
+    
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="container__menu">
+            <li><a href="">home</a></li>
+            <li><a href="">product</a></li>
+            <li>
+                <a href="">contact</a>
+                <ul class="sub__menu">
+                    <li><a href="">Group 1</a></li>
+                    <li><a href="">Group 2</a></li>
+                    <li><a href="">Group 3</a></li>
+                    <li><a href="">Group 4</a></li>
+                    <li><a href="">Group 5</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
